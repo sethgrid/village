@@ -1,0 +1,71 @@
+{{define "base"}}
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>Mountain Home Village Community Center</title>
+  <meta name="description" content="Mountain Home Village Community Center, the hub to happenings in Mnt. Home." />
+  <meta name="keywords" content="mountain home village, mnt home vill" />
+  <meta http-equiv="content-type" content="text/html; charset=windows-1252" />
+  <link rel="stylesheet" type="text/css" href="web/style/style.css" />
+</head>
+
+<body>
+  <div id="main">
+    <div id="header">
+      <div id="logo">
+        <div id="logo_text">
+          <!-- class="logo_colour", allows you to change the colour of the text -->
+          <h1><a href="index.html">Mnt Home Village<span class="logo_colour">Community Center</span></a></h1>
+          <h2>Gather. Celebrate. Community.</h2>
+        </div>
+      </div>
+      <div id="menubar">
+        <ul id="menu">
+          <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
+          <li class="selected"><a href="index.html">Home</a></li>
+          <li><a href="donate.html">Donate Now</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div id="content_header"></div>
+    <div id="site_content">
+      <div id="banner"></div>
+	  <div id="sidebar_container">
+        <div class="sidebar">
+          <div class="sidebar_top"></div>
+          <div class="sidebar_item">
+            <!-- insert your sidebar items here -->
+            <h3>Latest News</h3>
+
+            {{template "latest_news" .}}
+
+          </div>
+          <div class="sidebar_base"></div>
+        </div>
+        <div class="sidebar">
+          <div class="sidebar_top"></div>
+          <div class="sidebar_item">
+            <h3>Useful Links</h3>
+            <ul>
+              <li><a href="#">Community Facebook Page</a></li>
+              <li><a href="#">Calendar</a></li>
+            </ul>
+          </div>
+          <div class="sidebar_base"></div>
+        </div>
+      </div>
+      <div id="content">
+          {{template "content" .}}
+      </div>
+    </div>
+    <div id="content_footer"></div>
+    <div id="footer">
+      <p><a href="index.html">Home</a> | <a href="donate.html">Donate</a> | <a href="contact.html">Contact Us</a></p>
+      <p>Copyright &copy; simplestyle_horizon | <a href="http://validator.w3.org/check?uri=referer">HTML5</a> | <a href="http://jigsaw.w3.org/css-validator/check/referer">CSS</a> | <a href="http://www.html5webtemplates.co.uk">Simple web templates by HTML5</a></p>
+    </div>
+  </div>
+</body>
+</html>
+{{end}}
