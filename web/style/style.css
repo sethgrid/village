@@ -10,6 +10,10 @@ body
   background: #FFF;
   color: #555;}
 
+iframe
+{ border: 0;
+  overflow: hidden;}
+
 p
 { padding: 0 0 20px 0;
   line-height: 1.7em;}

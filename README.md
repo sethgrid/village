@@ -26,3 +26,5 @@ I propose that we sign up for [DonerBox](https://donorbox.org/orgs/new). They ha
  - Show upcoming event details from the calendar in the side bar
  - Allow users to sign up or contact Dan for community watch
  - Have a page for more details on financials, upcoming projects, etc
+ - Sidebar, use facebook api to get latest post from facebook. Link to it.
+ - Make .ico file
