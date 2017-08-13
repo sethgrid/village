@@ -12,3 +12,14 @@ To deploy:
     - `GOOS=linux go build`
     - `scp -r * $MYIP:~/mountainhomevillage`
     - `ssh $MYIP` and `sudo service mountainhomevillage restart`
+
+
+## Integrations
+
+I propose that we sign up for [DonerBox](https://donorbox.org/orgs/new). They have reasonable fees and are free for the first $1k in donations per month. That should do really well for us.
+
+## Ideas
+
+ - Show upcoming event details from the calendar in the side bar
+ - Allow users to sign up or contact Dan for community watch
+ - Have a page for more details on financials, upcoming projects, etc
