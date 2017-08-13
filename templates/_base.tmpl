@@ -23,9 +23,9 @@
       <div id="menubar">
         <ul id="menu">
           <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
-          <li class="selected"><a href="index.html">Home</a></li>
-          <li><a href="donate.html">Donate Now</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
+          <li {{if eq .Active "index.html"}}class="selected"{{end}}><a href="index.html">Home</a></li>
+          <li {{if eq .Active "donate.html"}}class="selected"{{end}}><a href="donate.html">Donate Now</a></li>
+          <li {{if eq .Active "contact.html"}}class="selected"{{end}}><a href="contact.html">Contact Us</a></li>
         </ul>
       </div>
     </div>

@@ -72,5 +72,9 @@ func (s *Site) Render(templateName string, w io.Writer) error {
 		}
 		return fmt.Errorf("unknown template name. Must be one of %v", allTemplates)
 	}
-	return s.templates[templateName].ExecuteTemplate(w, "base", s)
+	return s.templates[templateName].ExecuteTemplate(w, "base", struct {
+		Active string
+	}{
+		Active: templateName,
+	})
 }
