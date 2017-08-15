@@ -60,11 +60,16 @@ func donateHandler(w http.ResponseWriter, r *http.Request) {
 	}
 }
 func facebookWebhookHandler(w http.ResponseWriter, r *http.Request) {
-	var payload string
+	var form string
 	for k, v := range r.Form {
-		payload += fmt.Sprintf("%s - %v", k, v)
+		form += fmt.Sprintf("%s - %v", k, v)
 	}
-	log.Printf("facebook webhook: %s", payload)
+	r.FormValue("hub.mode")
+	r.FormValue("hub.challenge")
+	r.FormValue("hub.verify_token") // should equal what I set it to on facebook. "verify_token".
+	log.Printf("facebook webhook form values ; mode, challenge, verify_token: %q, %s, %s, %s", form, r.FormValue("hub.mode"), r.FormValue("hub.challenge"), r.FormValue("hub.verify_token"))
+	// to validate the webhook, we need to return the verify_token to facebook
+	w.Write([]byte(r.FormValue("hub.challenge")))
 }
 
 // Site holds any state that we need
