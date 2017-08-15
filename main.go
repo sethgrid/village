@@ -38,6 +38,8 @@ func main() {
 	http.HandleFunc("/donate", donateHandler)
 	http.HandleFunc("/donate.html", donateHandler)
 
+	http.HandleFunc("/fb", facebookWebhookHandler)
+
 	log.Printf("Serving on HTTP port: %s\n", *port)
 	log.Fatal(http.ListenAndServe(":"+*port, nil))
 }
@@ -56,6 +58,13 @@ func donateHandler(w http.ResponseWriter, r *http.Request) {
 	if err := NewSite().Render("donate.html", w); err != nil {
 		log.Println(err)
 	}
+}
+func facebookWebhookHandler(w http.ResponseWriter, r *http.Request) {
+	var payload string
+	for k, v := range r.Form {
+		payload += fmt.Sprintf("%s - %v", k, v)
+	}
+	log.Printf("facebook webhook: %s", payload)
 }
 
 // Site holds any state that we need
